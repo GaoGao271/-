@@ -4,14 +4,14 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="noindex, nofollow" name="robots"/>
-  <meta content="课程练习：个人介绍、技能与作品门户。" name="description"/>
+  <meta content="高婷敏的个人简历主页：前端学习、项目作品与大模型应用探索。" name="description"/>
   <title>
-   我的个人主页
+   高婷敏 · 个人简历主页
   </title>
   <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
   <!-- CSS 负责颜色、字体、布局；defer 让 JavaScript 在 HTML 解析完成后执行。 -->
   <link href="styles.css" rel="stylesheet"/>
-   <script src="works-data.js" defer></script>
+  <script src="works-data.js" defer></script>
   <script src="works-render.js" defer></script>
   <script src="app.js" defer></script>
  </head>
@@ -19,13 +19,18 @@
   <a class="skip-link" href="#main">
    跳到正文
   </a>
-  <!-- 第 4 课新增①：顶部阅读进度条，宽度由 JavaScript 控制 -->
+  <!-- 顶部阅读进度条，宽度由 JavaScript 控制 -->
   <div class="reading-progress" id="reading-progress">
   </div>
   <header class="site-header">
    <div class="container header-inner">
     <a class="brand" href="#about">
-     我的主页
+     <span class="brand-dot">
+     </span>
+     高婷敏
+     <span class="brand-en">
+      GaoTingmin
+     </span>
     </a>
     <!-- href="#栏目ID" 是原生锚点：即使不加载 JavaScript，也能跳到对应栏目。 -->
     <nav aria-label="主导航">
@@ -36,7 +41,7 @@
       经历
      </a>
      <a href="#projects">
-      科研
+      项目
      </a>
      <a href="#skills">
       技能
@@ -45,20 +50,25 @@
       作品
      </a>
      <a href="#teaching">
-      教学
+      目标
      </a>
      <a href="#publications">
-      成果
+      记录
      </a>
     </nav>
    </div>
   </header>
   <main id="main">
-   <!-- HTML 练习：修改姓名、研究方向、照片路径和联系方式。 -->
+   <!-- 首屏：姓名、方向、照片与联系方式。 -->
    <section class="hero" id="about">
+    <div aria-hidden="true" class="hero-bg">
+    </div>
     <div class="container">
      <div class="hero-top">
       <div class="hero-copy">
+       <p class="hero-greet">
+        你好，我是
+       </p>
        <h1>
         高婷敏
         <span>
@@ -69,13 +79,27 @@
         软件技术专业学生 · 前端开发学习者
        </p>
        <p class="hero-school">
-        广东科学技术职业学院 25大模型应用开发
+        广东科学技术职业学院 · 2025 级大模型应用开发方向
        </p>
+       <div class="hero-actions">
+        <a class="btn btn-primary" href="#portfolio">
+         查看我的作品
+        </a>
+        <a class="btn btn-ghost" href="#experience">
+         了解我的经历
+        </a>
+       </div>
       </div>
       <div class="hero-visual">
        <figure>
-        <img alt="个人头像占位图，请替换为自己的图片" height="220" src="1.jpg" width="220"/>
+        <img alt="高婷敏的个人照片" height="220" src="1.jpg" width="220"/>
        </figure>
+       <span class="hero-badge hero-badge-1">
+        在校学习中
+       </span>
+       <span class="hero-badge hero-badge-2">
+        4 个上线作品
+       </span>
       </div>
      </div>
      <div class="research-direction" id="research-direction">
@@ -83,8 +107,28 @@
        学习方向
       </span>
       <p>
-       HTML5、CSS3、JavaScript，正在学习 Git、数据库与网站部署。
+       用 HTML5、CSS3、JavaScript 打牢前端基础，同时学习 Git 版本管理、数据库与大模型应用开发，坚持项目驱动、边学边做。
       </p>
+      <ul aria-label="正在学习的技术" class="hero-chips">
+       <li>
+        HTML5
+       </li>
+       <li>
+        CSS3
+       </li>
+       <li>
+        JavaScript
+       </li>
+       <li>
+        Git
+       </li>
+       <li>
+        数据库
+       </li>
+       <li>
+        大模型应用
+       </li>
+      </ul>
      </div>
      <div class="profile-details">
       <div>
@@ -92,7 +136,7 @@
         学习阶段
        </span>
        <p>
-        在校学习
+        2025 级 · 在校学习
        </p>
       </div>
       <div>
@@ -100,15 +144,17 @@
         所在城市
        </span>
        <p>
-        珠海
+        广东 · 珠海
        </p>
       </div>
       <div>
        <span>
-        联系
+        联系电话
        </span>
        <p>
-        17817194897
+        <a href="tel:17817194897">
+         17817194897
+        </a>
        </p>
       </div>
       <div>
@@ -122,85 +168,258 @@
      </div>
     </div>
    </section>
-   <!-- 每个栏目复用 section → container → 标题/内容 的结构，统一由 CSS 控制样式。 -->
+   <!-- 经历：时间轴样式。 -->
    <section class="section" id="experience">
     <div class="container">
      <header class="section-heading">
       <h2>
-       教育与工作经历
+       教育与学习经历
       </h2>
+      <p>
+       从课堂到项目，每一步都有迹可循。
+      </p>
      </header>
-     <div class="section-content">
-      <!-- TASK-HTML：复制 experience-item 可增加一条自己的经历。 -->
-      <div class="experience-item">
-       <p class="experience-heading">
-        <strong>
-         我的学校 · 软件技术专业
-        </strong>
-        <time>
-         在读
-        </time>
-       </p>
-       <p class="experience-detail">
-        学习网页开发，用项目记录成长。
-       </p>
+     <div class="section-content timeline">
+      <div class="timeline-item">
+       <span aria-hidden="true" class="timeline-dot">
+       </span>
+       <div class="timeline-card">
+        <p class="experience-heading">
+         <strong>
+          广东科学技术职业学院 · 软件技术专业
+         </strong>
+         <time>
+          2025.09 — 至今
+         </time>
+        </p>
+        <p class="experience-detail">
+         大模型应用开发方向。主修 Web 前端开发、数据库应用、Git 版本管理等课程，坚持项目驱动学习，每个作品都真实部署上线。
+        </p>
+       </div>
+      </div>
+      <div class="timeline-item">
+       <span aria-hidden="true" class="timeline-dot">
+       </span>
+       <div class="timeline-card">
+        <p class="experience-heading">
+         <strong>
+          网站部署与自动化实践
+         </strong>
+         <time>
+          2026
+         </time>
+        </p>
+        <p class="experience-detail">
+         用 Git 与 GitHub 管理代码，通过 GitHub Actions 自动构建，把个人主页部署到 Netlify——每次提交，线上版本自动更新。
+        </p>
+       </div>
       </div>
      </div>
     </div>
    </section>
+   <!-- 项目：卡片网格。 -->
    <section class="section" id="projects">
     <div class="container">
      <header class="section-heading">
       <h2>
        项目经历
       </h2>
+      <p>
+       边学边做，把课堂知识变成能跑起来的东西。
+      </p>
      </header>
-     <div class="section-content">
-      <article class="research-item">
+     <div class="section-content project-grid">
+      <article class="project-card">
+       <span class="project-tag">
+        已上线
+       </span>
        <h3>
-        <time>
-         课程练习
-        </time>
-        个人主页
+        个人主页（本站）
        </h3>
        <p>
-        项目内容：制作自己的网页，展示资料与作品，记录修改、测试与发布过程。
+        从零编写 HTML、CSS 与 JavaScript，展示个人资料与作品；使用 Git 记录每次修改，并自动构建、部署上线，支持作品筛选与排序。
        </p>
+       <ul class="project-stack">
+        <li>
+         HTML5
+        </li>
+        <li>
+         CSS3
+        </li>
+        <li>
+         JavaScript
+        </li>
+        <li>
+         CI/CD
+        </li>
+       </ul>
+      </article>
+      <article class="project-card">
+       <span class="project-tag is-doing">
+        进行中
+       </span>
+       <h3>
+        大模型应用探索
+       </h3>
+       <p>
+        学习提示词工程与大模型 API 调用，尝试制作一个简单的校园问答小助手，探索大模型与前端页面的结合方式。
+       </p>
+       <ul class="project-stack">
+        <li>
+         提示词工程
+        </li>
+        <li>
+         大模型 API
+        </li>
+        <li>
+         前端集成
+        </li>
+       </ul>
       </article>
      </div>
     </div>
    </section>
+   <!-- 技能：进度条卡片，诚实标注熟练度。 -->
    <section class="section" id="skills">
     <div class="container">
      <header class="section-heading">
       <h2>
        技能与实践
       </h2>
+      <p>
+       诚实标注熟练度，持续升级中。
+      </p>
      </header>
-     <div class="section-content">
-      <ul class="skills-list">
-       <li>
+     <div class="section-content skills-grid">
+      <div class="skill-card">
+       <div class="skill-head">
         <strong>
-         网页内容
+         HTML5
         </strong>
-        HTML5 结构、图片、链接。
-       </li>
-       <li>
+        <span>
+         网页结构
+        </span>
+       </div>
+       <div aria-hidden="true" class="skill-bar">
+        <i style="width: 85%">
+        </i>
+       </div>
+       <p>
+        语义化标签、图片与链接，能独立搭好页面骨架。
+       </p>
+      </div>
+      <div class="skill-card">
+       <div class="skill-head">
         <strong>
+         CSS3
+        </strong>
+        <span>
          页面样式
+        </span>
+       </div>
+       <div aria-hidden="true" class="skill-bar">
+        <i style="width: 80%">
+        </i>
+       </div>
+       <p>
+        字体、颜色、Flex 与 Grid 布局，适配手机与电脑。
+       </p>
+      </div>
+      <div class="skill-card">
+       <div class="skill-head">
+        <strong>
+         JavaScript
         </strong>
-        CSS3 字体、颜色、响应式布局。
+        <span>
+         页面交互
+        </span>
+       </div>
+       <div aria-hidden="true" class="skill-bar">
+        <i style="width: 55%">
+        </i>
+       </div>
+       <p>
+        DOM 操作与事件处理，实现进度条、筛选排序等交互。
+       </p>
+      </div>
+      <div class="skill-card">
+       <div class="skill-head">
+        <strong>
+         Git 与部署
+        </strong>
+        <span>
+         版本管理
+        </span>
+       </div>
+       <div aria-hidden="true" class="skill-bar">
+        <i style="width: 65%">
+        </i>
+       </div>
+       <p>
+        Git 提交与分支，GitHub Actions 构建，Netlify 发布。
+       </p>
+      </div>
+      <div class="skill-card">
+       <div class="skill-head">
+        <strong>
+         数据库
+        </strong>
+        <span>
+         数据基础
+        </span>
+       </div>
+       <div aria-hidden="true" class="skill-bar">
+        <i style="width: 45%">
+        </i>
+       </div>
+       <p>
+        数据表设计与基础增删改查，正在课程中深入学习。
+       </p>
+      </div>
+      <div class="skill-card">
+       <div class="skill-head">
+        <strong>
+         大模型应用
+        </strong>
+        <span>
+         新方向
+        </span>
+       </div>
+       <div aria-hidden="true" class="skill-bar">
+        <i style="width: 40%">
+        </i>
+       </div>
+       <p>
+        提示词工程入门，学习调用大模型 API 做小应用。
+       </p>
+      </div>
+     </div>
+     <div class="tools-row">
+      <span class="eyebrow">
+       常用工具
+      </span>
+      <ul aria-label="常用工具" class="hero-chips">
+       <li>
+        VS Code
        </li>
        <li>
-        <strong>
-         开发过程
-        </strong>
-        JavaScript、Git、检查与部署。
+        Git
+       </li>
+       <li>
+        GitHub
+       </li>
+       <li>
+        Netlify
+       </li>
+       <li>
+        Chrome DevTools
        </li>
       </ul>
      </div>
     </div>
    </section>
+   <!-- 作品：筛选与排序工具条由 JavaScript 生成，卡片由 works-data.js 渲染；
+        下面的静态卡片只是不加载 JS 时的兜底。 -->
    <section class="section" id="portfolio">
     <div class="container">
      <header class="section-heading">
@@ -208,11 +427,9 @@
        作品门户
       </h2>
       <p class="works-notice">
-       以下为教学示例，完成后可替换为自己的作品。
+       以下作品均为课程实战项目，点开即可在线体验。
       </p>
      </header>
-     <!-- 第 5 课新增：筛选与排序工具条。里面的按钮由 JavaScript 生成，
-          不写 JS 时这里是空的，页面照常显示全部作品。 -->
      <div class="works-toolbar">
       <div class="works-tags" id="works-tags">
       </div>
@@ -284,60 +501,72 @@
      </ol>
     </div>
    </section>
+   <!-- 目标：本学期的小目标。 -->
    <section class="section" id="teaching">
     <div class="container">
      <header class="section-heading">
       <h2>
-       学习与实践
+       本学期目标
       </h2>
+      <p>
+       一步一个脚印，把学习变成作品。
+      </p>
      </header>
      <div class="section-content">
-      <div class="teaching-group">
-       <h3>
-        本学期目标
-       </h3>
-       <ol>
-        <li>
-         每次课完成一个可运行的小改动。
-        </li>
-        <li>
-         能解释自己修改的 HTML、CSS 和 JavaScript。
-        </li>
-        <li>
-         使用 Git 记录版本，让作品能被别人访问。
-        </li>
-       </ol>
-      </div>
+      <ol class="goal-list">
+       <li>
+        每节课完成一个可运行的小改动，让作品集持续长大。
+       </li>
+       <li>
+        能独立解释并修改自己写的 HTML、CSS 和 JavaScript。
+       </li>
+       <li>
+        熟练使用 Git 记录版本，作品随时能被别人访问。
+       </li>
+       <li>
+        学会调用大模型 API，做出第一个真正的小应用。
+       </li>
+      </ol>
      </div>
     </div>
    </section>
+   <!-- 记录：学习里程碑。 -->
    <section class="section" id="publications">
     <div class="container">
      <header class="section-heading">
       <h2>
        学习记录
       </h2>
+      <p>
+       每一个脚印，都算数。
+      </p>
      </header>
      <div class="section-content">
-      <div class="publication-group">
-       <h3>
-        我的记录
-       </h3>
-       <ol class="references">
-        <li>
-         完成第一张个人主页。
-        </li>
-        <li>
-         后续在这里补充自己的真实成果。
-         成功
-        </li>
-       </ol>
-      </div>
+      <ol class="references">
+       <li>
+        <strong>
+         2026 · 个人主页上线
+        </strong>
+        完成页面编写与自动部署，你现在看到的这个网站就是。
+       </li>
+       <li>
+        <strong>
+         2025 – 2026 · 四个课程实战项目
+        </strong>
+        依次完成博客、社区、祝福卡片与音乐站，全部在线可访问。
+       </li>
+       <li>
+        <strong>
+         持续更新中
+        </strong>
+        后续在这里补充新的学习成果，欢迎常回来看看。
+       </li>
+      </ol>
      </div>
     </div>
    </section>
   </main>
-  <!-- 第 4 课新增：这两块由 JavaScript 控制，不写 JS 时它们不会出现 -->
+  <!-- 这两块由 JavaScript 控制，不写 JS 时它们不会出现 -->
   <p aria-live="polite" class="section-indicator" id="section-indicator">
   </p>
   <button aria-label="返回页面顶部" class="to-top" id="to-top" type="button">
@@ -345,12 +574,33 @@
   </button>
   <footer>
    <div class="container footer-inner">
-    <a href="#about">
-     回到顶部
-    </a>
-    <a href="#portfolio">
-     作品门户
-    </a>
+    <div class="footer-brand">
+     <p class="footer-name">
+      高婷敏
+      <span>
+       GaoTingmin
+      </span>
+     </p>
+     <p class="footer-note">
+      软件技术专业 · 前端开发学习者
+     </p>
+    </div>
+    <div class="footer-links">
+     <a href="#portfolio">
+      作品门户
+     </a>
+     <a href="#about">
+      回到顶部
+     </a>
+     <a href="tel:17817194897">
+      17817194897
+     </a>
+    </div>
+   </div>
+   <div class="container">
+    <p class="footer-copy">
+     © 2026 高婷敏 · 用 HTML、CSS 与 JavaScript 手工搭建
+    </p>
    </div>
   </footer>
  </body>
